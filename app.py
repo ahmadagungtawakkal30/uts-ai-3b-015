@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun May  9 08:13:54 2021
-
-@author: ahmad
-"""
 from flask import Flask, render_template, request
 from textblob import TextBlob
 import re
