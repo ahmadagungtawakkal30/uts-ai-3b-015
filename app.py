@@ -23,5 +23,5 @@ def index():
             analy = "Positive"
         return render_template('index.html', url=url, sentimen=sentimen, analy=analy)
     return render_template('layout.html')
-#if __name__ == "__main__":
-#    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
