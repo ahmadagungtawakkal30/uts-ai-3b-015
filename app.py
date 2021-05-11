@@ -18,16 +18,25 @@ def index():
         remove = url.replace(('-'),' ')
         change = r"https?://(www\.)?"
         text = re.sub(change, ' ', remove)
-        sentimen = TextBlob(text).sentiment.polarity
-        print (sentimen)
-        
-        if sentimen < 0:
-            analy = "Negative"
-        elif sentimen == 0:
-            analy = "Netral"
+        sentimen = TextBlob(text).sentiment
+        pol = sentimen.polarity
+        sub = sentimen.subjectivity
+        #polarity
+        if pol < 0:
+            analy_pol = "Negative"
+        elif pol == 0:
+            analy_pol = "Netral"
         else:
-            analy = "Positive"
-        return render_template('index.html', url=url, sentimen=sentimen, analy=analy)
+            analy_pol = "Positive"
+        #subjective
+        if sub < 0:
+            analy_sub = "Negative"
+        elif sub == 0:
+            analy_sub = "Netral"
+        else:
+            analy_sub = "Positive"
+        
+        return render_template('index.html', url=url, pol=pol, analy_pol=analy_pol, sub=sub, analy_sub=analy_sub)
     return render_template('layout.html')
 #if __name__ == "__main__":
 #    app.run(debug=True)
