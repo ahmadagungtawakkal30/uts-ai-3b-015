@@ -34,7 +34,7 @@ def index():
         elif sub == 0:
             analy_sub = "Netral"
         else:
-            analy_sub = "Subjectiv"
+            analy_sub = "Subjective"
         
         return render_template('index.html', url=url, pol=pol, analy_pol=analy_pol, sub=sub, analy_sub=analy_sub)
     return render_template('layout.html')
