@@ -30,11 +30,11 @@ def index():
             analy_pol = "Positive"
         #subjective
         if sub < 0:
-            analy_sub = "Negative"
+            analy_sub = "Objective"
         elif sub == 0:
             analy_sub = "Netral"
         else:
-            analy_sub = "Positive"
+            analy_sub = "Subjectiv"
         
         return render_template('index.html', url=url, pol=pol, analy_pol=analy_pol, sub=sub, analy_sub=analy_sub)
     return render_template('layout.html')
